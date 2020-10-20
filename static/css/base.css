@@ -1,4 +1,11 @@
-.logo {
-    background: url('/media/logggooo.png') no-repeat center;
-    height: 500px;
+.header-text {
+    font-family: coda;
+    font-size: 70px;
+    color:black;   
+    font-style: italic;
+    margin: 15px;
+}
+
+header {
+    background-color: pink; 
 }
