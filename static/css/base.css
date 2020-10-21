@@ -1,11 +1,52 @@
+body {
+    min-height: 100vh;
+}
+
 .header-text {
     font-family: coda;
     font-size: 70px;
-    color:black;   
+    color:white;   
     font-style: italic;
-    margin: 15px;
+    background-color: pink;
+    display: flex;
+    justify-content: space-between;
 }
 
-header {
-    background-color: pink; 
+/* --- css for changing background color or toggler button to match div---*/
+.navbar {
+    background-color: pink;
+}
+
+/* --- css for changing background color or toggler button ---*/
+.navbar-toggler {
+    background-color:white;
+}
+
+/* --- css for changing font when navbar is collapsed ---*/
+.navbar-collapse {
+    font-size: 20px;
+    font-family: coda;
+    color: white;
+    text-align: right;
+    width: 100%;
+}
+
+/*----------footer----------*/
+.footer {
+    color:white;
+    text-align: center;
+    width: 100%;
+    font-style: italic;
+    font-family: "coda", cursive;
+}
+
+.footer a i {
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.footer a i:hover {
+    color: lightgrey;
 }
