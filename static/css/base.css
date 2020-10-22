@@ -1,35 +1,47 @@
-body {
-    min-height: 100vh;
+
+.navbar {
+    font-family: coda;
+    font-size: 30px;
+    background-color: pink;
+    font-style: italic;
+    margin-bottom: 25px;
 }
 
-.header-text {
+.navbar-brand {
     font-family: coda;
     font-size: 70px;
     color:white;   
     font-style: italic;
-    background-color: pink;
-    display: flex;
-    justify-content: space-between;
 }
 
-/* --- css for changing background color or toggler button to match div---*/
-.navbar {
-    background-color: pink;
+.navbar-brand:hover {
+    color: whitesmoke;
 }
 
-/* --- css for changing background color or toggler button ---*/
 .navbar-toggler {
-    background-color:white;
+   background-color:white;
+   color: lightgray;
+   padding: 10px;
+   margin: 15px;
+   font-size: 22px;
+   border-color: lightgray;
+   border-radius: 0px;
+   border-width: 2px;
 }
 
 /* --- css for changing font when navbar is collapsed ---*/
-.navbar-collapse {
-    font-size: 20px;
+.nav-item {
+    font-size: 15px;
     font-family: coda;
     color: white;
-    text-align: right;
+    text-align: center;
     width: 100%;
 }
+
+.nav-item:hover {
+    color: whitesmoke;
+}
+
 
 /*----------footer----------*/
 .footer {
@@ -48,5 +60,26 @@ body {
 }
 
 .footer a i:hover {
-    color: lightgrey;
+    color: whitesmoke;
 }
+
+/* ---- INDEX.HTML ---*/
+
+.card {
+    border-radius: 0;
+    margin: auto;
+    width: 70%;
+    height: 70%;
+    background-color: whitesmoke;
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+}
+
+.img1 {
+    height: 300px;
+    width: 200px;
+    margin: auto;
+}
+
