@@ -1,0 +1,10 @@
+[{
+    "pk": 1,
+    "fields": {
+        "sku": "00001",
+        "name": "You&i Hoodie",
+        "description": "Loose fit branded hoodie, with drawstrings, hood, and pockets",
+        "image_url": "/media/IMG_0739.jpg",
+        "price": "30"
+    }
+}]
