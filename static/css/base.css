@@ -55,8 +55,8 @@
 .footer a i {
     text-decoration: none;
     font-size: 30px;
-    color: #ffffff;
     padding: 10px;
+    color: white;
 }
 
 .footer a i:hover {
