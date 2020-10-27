@@ -65,7 +65,7 @@
 
 /* ---- INDEX.HTML ---*/
 
-.card {
+.indexCard {
     border-radius: 0;
     margin: auto;
     width: 70%;
@@ -81,5 +81,23 @@
     height: 300px;
     width: 200px;
     margin: auto;
+}
+
+/* ---- PRODUCTS.HTML ---*/
+.headerAll {
+    font-family: coda;
+    font-size: 60px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.ProductsCard {
+    border-radius: 0;
+    margin: auto;
+    background-color: whitesmoke;
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
 }
 

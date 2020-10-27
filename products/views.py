@@ -5,10 +5,10 @@ from .models import Product
 
 def all_products(request):
     """A view to show all products selling"""
-    product = Product.objects.all()
+    products = Product.objects.all()
 
     context = {
-        'product': product,
+        'products': products,
     }
 
     return render(request, 'products.html', context)
