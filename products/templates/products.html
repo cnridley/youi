@@ -9,11 +9,12 @@
 {% for product in products %}
 <div class="col-sm col-md-6 col-lg-4">
     <div class="card ProductsCard" style="width: 18rem;">
-        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+        <img class="card-img-top ProductImg" src="{{ product.image.url }}" alt="{{ product.name }}">
         <div class="card-body">
             <p class="card-text">{{ product.name }}</p>
             <p class="card-text">{{ product.description }}</p>
             <p class="card-text">£{{ product.price }}</p>
+            <a href="" id="addToCart">Add To cart</a>
         </div>
     </div>
 </div> 

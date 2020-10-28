@@ -75,6 +75,7 @@
     font-size: 15px;
     font-style: italic;
     color: black;
+    margin-bottom: 30px;
 }
 
 .img1 {
@@ -99,5 +100,11 @@
     font-size: 15px;
     font-style: italic;
     color: black;
+    margin-bottom: 20px;
+    min-height: 620px;
+}
+
+.ProductImg {
+    max-height: 300px;
 }
 
