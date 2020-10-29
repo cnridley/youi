@@ -108,3 +108,15 @@
     max-height: 300px;
 }
 
+
+/* ---- GALLERY.HTML ---*/
+.CarouselImage {
+    max-width: 500px;
+    max-height: 600px;
+    padding-bottom: 30px;
+    display: block;
+    margin: auto;
+}
+
+
+
