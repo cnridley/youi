@@ -18,5 +18,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.gallery, name='gallery')
+    path('', views.gallery, name='gallery'),
+    path('gallery/', views.image_upload_view),
 ]
