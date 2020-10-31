@@ -19,5 +19,4 @@ from . import views
 
 urlpatterns = [
     path('', views.gallery, name='gallery'),
-    path('gallery/', views.image_upload_view),
 ]

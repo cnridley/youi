@@ -3,6 +3,6 @@ from .models import Gallery
 
 class ImageForm(forms.ModelForm):
     """form for the Gallery model"""
-    class Meta:
+    class Meta():
         model = Gallery
         fields = ('name', 'image')
