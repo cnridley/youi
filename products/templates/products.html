@@ -3,7 +3,22 @@
 
 {% block content %}
 
-<h1 class="headerAll text-center">Merchandise</h1>
+<div class="headerAll text-center">Merchandise</div>
+<div class="row cart-total">
+    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'bag' %}">
+        <div class="text-center">
+            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <p class="my-0">
+                    {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                                $0.00
+                            {% endif %}
+                </p>
+        </div>
+    </a>
+</div>
+
 
 <div class="row">
 {% for product in products %}

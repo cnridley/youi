@@ -2,5 +2,59 @@
 {% load static %}
 
 {% block content %}
-<h1> {{ bag_items }} </h1>
+<div class="headerAll text-center">Your Items:</div>
+{% if bag_items %}
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Sub-Total</th>
+    </tr>
+  </thead>
+  {% for item in bag_items %}
+  <tbody>
+    <tr>
+      <td><img class="bag-image" src='{{ item.product.image.url }}'></img></td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.product.price }}</td>
+      <td>{{ item.product.price }}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+     <tr>
+        <td colspan="5" class="pt-5 text-left">
+            <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+            <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                {% if free_delivery_delta > 0 %}
+                    <p class="mb-1 text-danger">
+                        You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                    </p>
+                {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="text-left">
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+                 <a href="" class="btn btn-black rounded-0 btn-lg">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+        </td>
+    </tr>
+  
+</table>
+{% else %}
+YOUR BAG IS EMPTY
+{% endif %}
 {% endblock %}

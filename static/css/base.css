@@ -107,7 +107,11 @@
 .ProductImg {
     max-height: 300px;
 }
-
+.cart-total {
+    margin: auto;
+    display: block;
+    margin-bottom: 15px;
+}
 
 /* ---- GALLERY.HTML ---*/
 .CarouselImage {
@@ -117,6 +121,15 @@
     display: block;
     margin: auto;
 }
+
+.bag-image {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
+
+
 
 
 
