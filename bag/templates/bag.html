@@ -9,6 +9,7 @@
   <thead>
     <tr class="text-uppercase">
       <th scope="col">Product</th>
+      <th scope="col">Size</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
       <th scope="col">Sub-Total</th>
@@ -17,7 +18,8 @@
   {% for item in bag_items %}
   <tbody>
     <tr>
-      <td><img class="bag-image" src='{{ item.product.image.url }}'></img></td>
+      <td><p><strong>{{ item.product.name }}</strong></p><img class="bag-image" src='{{ item.product.image.url }}'></img></td>
+      <td>{% if item.product.has_size %}{{ item.size|upper }}{% else %}N/A{% endif %}</p></td>
       <td>{{ item.quantity }}</td>
       <td>{{ item.product.price }}</td>
       <td>{{ item.product.price }}</td>
