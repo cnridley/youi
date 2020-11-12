@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 <div class="headerAll text-center">Your Items:</div>
 {% if bag_items %}
-<table class="table table-striped">
+<table class="table table-striped container-fluid">
 
   <thead>
     <tr class="text-uppercase">
@@ -13,6 +14,7 @@
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
       <th scope="col">Sub-Total</th>
+      <th scope="col">Remove From Bag</th>
     </tr>
   </thead>
   {% for item in bag_items %}
@@ -21,8 +23,9 @@
       <td><p><strong>{{ item.product.name }}</strong></p><img class="bag-image" src='{{ item.product.image.url }}'></img></td>
       <td>{% if item.product.has_size %}{{ item.size|upper }}{% else %}N/A{% endif %}</p></td>
       <td>{{ item.quantity }}</td>
-      <td>{{ item.product.price }}</td>
-      <td>{{ item.product.price }}</td>
+      <td>${{ item.product.price }}</td>
+      <td>${{ item.product.price | calc_subtotal:item.quantity }}</td>
+      <td><a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><i class="fas fa-times RemoveFromBag"></i></a></td>
     </tr>
   </tbody>
   {% endfor %}
@@ -37,7 +40,9 @@
                     </p>
                 {% endif %}
         </td>
+        <td></td>
     </tr>
+    
     <tr>
         <td colspan="5" class="text-left">
             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
@@ -59,4 +64,22 @@
 {% else %}
 YOUR BAG IS EMPTY
 {% endif %}
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+// Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

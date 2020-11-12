@@ -121,11 +121,20 @@
     display: block;
     margin: auto;
 }
-
+/* ---- BAG.HTML ---*/
 .bag-image {
     height: 150px;
     width: 150px;
     margin: auto;
+}
+
+.RemoveFromBag {
+    font-size: 50px;
+    margin: auto
+}
+
+.remove-item {
+    cursor: pointer;
 }
 
 
