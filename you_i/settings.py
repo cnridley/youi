@@ -68,7 +68,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'allauth'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -107,7 +107,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #so that we know users are using real e
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #twice to avoid typos etc.
 ACCOUNT_USERNAME_MIN_LENGTH = 4 
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/success'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'you_i.wsgi.application'
 
