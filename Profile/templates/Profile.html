@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-HIIII
+{% for users in user %}
+HIIII {{ users.username }}
+{% endfor %}
 {% endblock %}
