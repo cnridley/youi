@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% block extra_title %}{% endblock %}</title>
-    
-  </head>
-  <body>
-    {% block content %}
+{% extends 'base.html' %}
 
-    {% if messages %}
-    <div>
-      <strong>Messages:</strong>
-      <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    <div>
-      <strong>Menu:</strong>
-      <ul>
-        {% if user.is_authenticated %}
-        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-        {% else %}
-        <li><a href="{% url 'account_login' %}">Sign In</a></li>
-        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-        {% endif %}
-      </ul>
-    </div>
-   
+{% block content %}
+   <div class="card container-fluid indexCard">
+  
+    {% block inner_content %}
     {% endblock %}
-    
-  </body>
-</html>
+  
+   </div>
+ 
+{% endblock %}
