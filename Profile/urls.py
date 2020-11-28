@@ -4,5 +4,5 @@ from . import views
 from django.contrib.auth.models import User
 
 urlpatterns = [
-    path('', views.get_profile, name='get_profile')
+    path('', views.profile, name='profile')
 ]
