@@ -1,7 +1,12 @@
 from django.shortcuts import render
-
+from Profile.models import Profile
 # Create your views here.
 
 def index(request):
     """A view to return index page"""
-    return render(request, 'index.html')
+    user = Profile.objects.all()
+    context = {
+        'user': user
+    }
+
+    return render(request, 'index.html', context)

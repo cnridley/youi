@@ -29,6 +29,14 @@
    border-width: 2px;
 }
 
+.loggedInText {
+    text-align: right;
+    font-size: 10px;
+    font-family: coda;
+    font-style: italic;
+    color: pink;
+}
+
 /* --- css for changing font when navbar is collapsed ---*/
 .nav-item {
     font-size: 15px;

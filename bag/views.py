@@ -2,12 +2,17 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import messages
 
 from products.models import Product
+from Profile.models import Profile
 
 # Create your views here.
 
 def shopping_bag(request):
     """A view to show the shopping bag"""
-    return render(request, 'bag.html')
+    user = Profile.objects.all()
+    context = {
+        'user': user
+    }
+    return render(request, 'bag.html', context)
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
