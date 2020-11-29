@@ -167,6 +167,21 @@
     color: black;
 }
 
+.ProfileImg {
+    min-width: 100px;
+    min-height: 100px;
+    color: pink;
+    font-size: 100px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.profileLinkText {
+    font-size: 20px;
+}
+
 
 
 
