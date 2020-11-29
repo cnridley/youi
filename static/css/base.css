@@ -153,6 +153,20 @@
     height: 2px;
 }
 
+/* ---- PROFILE.HTML ---*/
+.profile {
+    font-family: coda;
+    font-style: italic;
+    color: black;
+    font-size: 50px;
+}
+
+.profile-text {
+    font-family: coda;
+    font-style: italic;
+    color: black;
+}
+
 
 
 
