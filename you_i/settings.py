@@ -109,6 +109,9 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #twice to avoid typos etc.
 ACCOUNT_USERNAME_MIN_LENGTH = 4 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False # set to false so that superuser can access the sign up page. 
+#if set to true, the superuser would continue to get re-directed to the index.html page and there is no
+#need for a 'sign up'
 
 WSGI_APPLICATION = 'you_i.wsgi.application'
 
