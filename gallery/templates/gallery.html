@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
 
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -40,6 +47,7 @@
         </a>
         </div>
     </div>
+    {% if request.user.is_superuser %}
     <div class="row container-fluid m-auto">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -47,6 +55,7 @@
         <button type="submit">Upload</button>
     </form>
     </div>
+    {% endif %}
 
 
 {% endblock %}

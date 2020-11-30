@@ -3,6 +3,13 @@
 {% load bag_tools %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
 <div class="headerAll text-center">Your Items:</div>
 {% if bag_items %}
 <table class="table table-striped container-fluid">

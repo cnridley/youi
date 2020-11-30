@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
 
 {% for users in user %}
 <h1 class='text-center profile'> Welcome to You&i, {{ users.user }}! </h1>
@@ -25,4 +32,5 @@ You will find all your workouts here, and you will able to upload your progressi
 </div>  
 
 {% endfor %}
+
 {% endblock %}
