@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from .models import Profile
+from workouts.forms import WorkoutForm
+from workouts.models import workouts
 
 def profile(request):
     """ Display the user's profile. """
     user = Profile.objects.all()
     template = 'Profile.html'
     context = {
-        'user': user
+        'user': user,
     }
 
     return render(request, template, context)
