@@ -2,5 +2,29 @@
 {% load static %}
 
 {% block content %}
-PROGRESS PICS
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
+
+{% for users in user %}
+<h1 class='text-center profile'> {{ users.user }}'s Progression Pictures </h1>
+{% endfor %}
+
+
+<div class="row">
+{% for P in progression %}
+<div class="col-sm col-md-6 col-lg-4">
+    <div class="card ProductsCard" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-text">Week: {{ P. }}</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}

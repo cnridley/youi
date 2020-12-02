@@ -9,4 +9,4 @@ class ProgressionPicture(models.Model):
     progression_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.user.username
