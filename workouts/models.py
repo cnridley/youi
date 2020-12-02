@@ -6,7 +6,7 @@ from django.dispatch import receiver
 # Create your models here.
 
 class workouts(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     weeks = models.CharField(max_length=250, null=True, blank=True)
     body_part = models.CharField(max_length=250, null=True, blank=True)
     exercise1 = models.CharField(max_length=250, null=True, blank=True)

@@ -5,8 +5,10 @@
 {% for users in user %}
 <h1 class='text-center profile'> {{ users.user }}'s Workouts </h1>
 {% endfor %}
+
 <div class="row">
 {% for W in workout %}
+
 <div class="col-sm col-md-6 col-lg-4">
     <div class="card ProductsCard" style="width: 18rem;">
         <div class="card-body">
@@ -62,15 +64,17 @@
         </div>
     </div>
 </div>
-</div>
+
 {% endfor %}
+</div>
+{% if request.user.is_superuser %}
 <div class="row container-fluid m-auto">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button type="submit">Upload</button>
     </form>
 </div>
-
+{% endif %}
 
 {% endblock %}
