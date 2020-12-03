@@ -190,6 +190,28 @@
     font-size: 20px;
 }
 
+/* --  PROGRESSION.HTML -- */
+
+.ProgressionCard {
+    margin: auto;
+    min-height: 300px;
+    min-width: 300px;
+    border-radius: 0;
+    background-color: whitesmoke;
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.ProgressionImg {
+    height: 350px;
+    width: 250px;
+    padding-top: 17px;
+    margin: auto;
+}
+
 
 
 
