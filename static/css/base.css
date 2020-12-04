@@ -212,6 +212,19 @@
     margin: auto;
 }
 
+/* --  COMMENTS.HTML -- */
+.commentCard {
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 0;
+    background-color: whitesmoke;
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+}
+
 
 
 

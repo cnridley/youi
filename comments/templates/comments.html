@@ -19,11 +19,18 @@ Please leave any comments you may have on this page and I will respond to you vi
 I can! </p>
 {% endfor %}
 
+
+<div class="row">
 {% for C in user_comment %}
-<p>{{ C.title }}</p>
-<p> {{ C.text }}</p>
-<p> {{ C.created_on }}</p>
+<div class="card container-fluid commentCard">
+  <div class="card-body">
+    <h2 class="card-text">{{ C.title }}</h2>
+    <h4 class="card-text"> {{ C.text }}</h4>
+    <p> {{ C.created_on }}</p>
+  </div>
+</div>
 {% endfor %}
+</div>
 
 {% if request.user.is_authenticated %}
 <div class="row container-fluid m-auto">
