@@ -19,7 +19,7 @@
 {% for P in progression %}
 <div class="col-sm col-md-6">
 <div class="card container-fluid ProgressionCard" style="width: 18rem;">
-  <img class="card-img-top ProgressionImg" src="{{ P.progression_pic.url }}" alt="Card image cap">
+  <img class="card-img-top ProgressionImg" src="{{MEDIA_URL}}{{P.progression_pic}}" alt="Card image cap">
   <div class="card-body">
     <p class="card-text text-center">Week: {{ P.week }}</p>
   </div>

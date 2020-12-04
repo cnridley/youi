@@ -10,7 +10,7 @@ def progression_pictures(request):
     progression = ProgressionPicture.objects.all()
     
     if request.method == 'POST':
-        form = ProgressionForm(request.POST)
+        form = ProgressionForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect(reverse('progression_pictures'))
@@ -20,9 +20,7 @@ def progression_pictures(request):
     context = {
         'user': user,
         'progression': progression,
-        'form': form
+        'form': form,
     }
 
-    template = 'progression_pics.html'
-
-    return render(request, template, context)
+    return render(request, 'progression_pics.html', context)
