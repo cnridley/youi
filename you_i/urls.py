@@ -29,4 +29,5 @@ urlpatterns = [
     path('Profile/', include('Profile.urls')),
     path('workouts/', include('workouts.urls')),
     path('progression/', include('progression.urls')),
+    path('comments/', include('comments.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
