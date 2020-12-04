@@ -4,6 +4,35 @@
 
 {% block content %}
 
-COMMENTS HERE
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
+
+{% for users in user %}
+<h1 class='text-center profile'> {{ users.user }}'s Comments Page </h1>
+<p class="text-center profile-text"> I hope you are enjoying your journey so far! <br> 
+Please leave any comments you may have on this page and I will respond to you via e-mail as soon as 
+I can! </p>
+{% endfor %}
+
+{% for C in user_comment %}
+<p>{{ C.title }}</p>
+<p> {{ C.text }}</p>
+<p> {{ C.created_on }}</p>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<div class="row container-fluid m-auto">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Upload</button>
+    </form>
+</div>
+{% endif %}
 
 {% endblock %}
