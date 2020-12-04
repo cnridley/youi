@@ -8,6 +8,9 @@ class ProgressionPicture(models.Model):
     week = models.CharField(max_length=250, null=True, blank=True)
     progression_pic = models.ImageField(null=True, blank=True)
     progression_url = models.URLField(null=True, blank=True)
+    chest_measurement = models.CharField(max_length=250, null=True, blank=True)
+    waist_measurement = models.CharField(max_length=250, null=True, blank=True)
+    weight = models.CharField(max_length=250, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
