@@ -3,6 +3,32 @@
 
 {% block content %}
 
-REVIEWSS
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
+
+<h1 class='text-center profile'> Reviews</h1>
+<p class="text-center profile-text">Thanks for visiting!<br>
+Please leave a review.</p>
+
+<div class="row">
+{% for R in review %}
+<div class="col-sm col-md-6 col-lg-4">
+<div class="card container-fluid commentCard">
+  <div class="card-body">
+    <h2 class="card-text">{{ R.title }}</h2>
+    <h5 class="card-text"> {{ R.name }}</h5>
+    <p> Rating: {{ R.rating }}/5</p>
+    <p> {{ R.text }}/5</p>
+    <p> {{ R.created_on }}</p>
+  </div>
+  </div>
+</div>
+{% endfor %}
+</div>
 
 {% endblock %}
