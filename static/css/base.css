@@ -224,6 +224,17 @@
     font-style: italic;
     color: black;
 }
+/* --  REVIEWS.HTML -- */
+
+.reviewCard {
+    margin-bottom: 20px;
+    border-radius: 0;
+    background-color: whitesmoke;
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+}
 
 
 
