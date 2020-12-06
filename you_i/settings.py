@@ -112,9 +112,9 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email' #tells allauth what we want to 
 ACCOUNT_EMAIL_REQUIRED = True #makes it so an email is required to sign up
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #so that we know users are using real emails
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #twice to avoid typos etc.
-ACCOUNT_USERNAME_MIN_LENGTH = 4 
+ACCOUNT_USERNAME_MIN_LENGTH = 2 
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/Profile'
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False # set to false so that superuser can access the sign up page. 
 #if set to true, the superuser would continue to get re-directed to the index.html page and there is no
 #need for a 'sign up'

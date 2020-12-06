@@ -236,6 +236,30 @@
     color: black;
 }
 
+/* --  CONTACTS.HTML -- */
+
+.contactform {
+    border-radius: 0px;
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+    margin: auto;
+}
+
+.contactbutton {
+    background-color: pink;
+    font-family: coda;
+    font-size: 17px;
+    font-style: italic;
+    color: black;
+    border: black 2px solid;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px;
+    width: 90px;
+}
+
 
 
 
