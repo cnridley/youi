@@ -31,4 +31,5 @@ urlpatterns = [
     path('progression/', include('progression.urls')),
     path('comments/', include('comments.urls')),
     path('reviews/', include('reviews.urls')),
+    path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

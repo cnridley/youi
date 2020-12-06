@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
+
+<h1 class='text-center profile'>Contact</h1>
+<p class="text-center profile-text">Congratulations on making the first step to a healthy, fitter you!<br>
+Please contact me with any questions or to discuss possible workout plans or one-to-one 
+sessions!<br>
+I look forward to helping you achieve your goals!</p>
+
+<div class="row container-fluid m-auto">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+{% endblock %}

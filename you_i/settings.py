@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'progression',
     'comments',
     'reviews',
+    'contact',
 ]
 
 MIDDLEWARE = [
