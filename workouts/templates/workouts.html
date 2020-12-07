@@ -6,6 +6,8 @@
 <h1 class='text-center profile'> {{ users.user }}'s Workouts </h1>
 {% endfor %}
 
+<div class="homeButton"><a href="{% url 'profile' %}"> <i class="fas fa-home"></i></a></div>
+
 <div class="row">
 {% for W in workout %}
 

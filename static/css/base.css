@@ -161,6 +161,18 @@
     height: 2px;
 }
 
+.toast {
+    font-family: coda;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.successtoast {
+    font-family: coda;
+    font-size: 25px;
+    font-style: italic;
+}
+
 /* ---- PROFILE.HTML ---*/
 .profile {
     font-family: coda;
@@ -224,6 +236,13 @@
     font-style: italic;
     color: black;
 }
+
+.homeButton {
+    color: pink;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+}
 /* --  REVIEWS.HTML -- */
 
 .reviewCard {
@@ -252,8 +271,8 @@
     font-family: coda;
     font-size: 17px;
     font-style: italic;
-    color: black;
-    border: black 2px solid;
+    color: whitesmoke;
+    border: lightgray 3px solid;
     margin: auto;
     margin-bottom: 20px;
     padding: 8px;

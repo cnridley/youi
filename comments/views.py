@@ -2,6 +2,7 @@ from django.shortcuts import render, reverse, redirect
 from Profile.models import Profile
 from .forms import CommentForm
 from .models import comment
+from Profile.views import profile
 
 # Create your views here.
 
