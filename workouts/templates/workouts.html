@@ -6,6 +6,7 @@
 <h1 class='text-center profile'> {{ users.user }}'s Workouts </h1>
 {% endfor %}
 
+<!-- ORIGINAL LAYOUT!! -->
 <div class="homeButton"><a href="{% url 'profile' %}"> <i class="fas fa-home"></i></a></div>
 
 <div class="row">
@@ -73,7 +74,8 @@
 
 
 
-<!-- Button trigger modal -->
+<!-- Button trigger modal for danielle to upload new workout-->
+{% if request.user.is_superuser %}
 <div class="row container-fluid">
 <button type="button" class="btn btn-primary modalButton" data-toggle="modal" data-target="#exampleModal">
 {% for users in user %}
@@ -81,6 +83,7 @@
 {% endfor %}
 </button>
 </div>
+{% endif %}
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
