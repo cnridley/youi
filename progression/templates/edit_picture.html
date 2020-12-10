@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row container-fluid">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'edit_picture' progression.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'progression_pictures' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Update Picture</button>
+                    </div>
+                </form>
+            </div>            
+</div>
+
+{% endblock %}

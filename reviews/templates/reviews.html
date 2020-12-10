@@ -27,7 +27,9 @@ Please leave a review.</p>
     <p> {{ R.created_on }}</p>
     {% if request.user.is_superuser %}
                 <small class="ml-3">
-                <!--When using id in for loop, you need to use whatever you used in the loop i.e R. -->
+                <!--When using id in for loop, you need to use whatever you used in the loop i.e R.
+                you can only reference the object within the scope where it's being used. 
+                In this case, the for loop -->
                         <a class="text-danger" href="{% url 'delete_review' R.id %}">Delete</a>
                 </small>
     {% endif %}
