@@ -28,7 +28,16 @@ Please leave a review.</p>
   </div>
   </div>
 </div>
+
+
 {% endfor %}
+{% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a class="text-danger" href="{% url 'delete_review' reviews.id %}">Delete</a>
+            </small>
+            {% endif %}
+
+
 </div>
 
 <!-- Button trigger modal -->

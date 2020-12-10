@@ -18,5 +18,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.reviews, name='reviews')
+    path('', views.reviews, name='reviews'),
+    path('delete/<int:reviews_id>/', views.delete_review, name='delete_review'),
 ]
