@@ -3,6 +3,7 @@ from .models import Reviews
 from Profile.models import Profile
 from .forms import ReviewForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 def reviews(request):
@@ -32,7 +33,7 @@ def delete_review(request, reviews_id):
         messages.info(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Reviews, pk=reviews_id)
-    product.delete()
-    messages.success(request, 'Review deleted!')
-    return redirect(reverse('reviews'))
+    review = get_object_or_404(Reviews, pk=reviews_id)
+    review.delete()
+
+    return redirect(reverse(reviews))

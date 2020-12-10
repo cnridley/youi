@@ -25,17 +25,19 @@ Please leave a review.</p>
     <p> Rating: {{ R.rating }}/5</p>
     <p> {{ R.text }}</p>
     <p> {{ R.created_on }}</p>
-  </div>
-  </div>
-</div>
-
-
-{% endfor %}
-{% if request.user.is_superuser %}
+    {% if request.user.is_superuser %}
                 <small class="ml-3">
-                    <a class="text-danger" href="{% url 'delete_review' reviews.id %}">Delete</a>
-            </small>
-            {% endif %}
+                <!--When using id in for loop, you need to use whatever you used in the loop i.e R. -->
+                        <a class="text-danger" href="{% url 'delete_review' R.id %}">Delete</a>
+                </small>
+    {% endif %}
+  </div>
+  </div>
+
+</div>
+    
+{% endfor %}
+
 
 
 </div>
