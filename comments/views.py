@@ -7,7 +7,7 @@ from Profile.views import profile
 # Create your views here.
 
 def comments(request):
-    user = Profile.objects.all()
+    user = Profile.objects.filter(user=request.user)
     user_comment = comment.objects.all()
 
     if request.method == 'POST':

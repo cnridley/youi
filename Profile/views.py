@@ -8,7 +8,7 @@ from progression.models import ProgressionPicture
 
 def profile(request):
     """ Display the user's profile. """
-    user = Profile.objects.all()
+    user = Profile.objects.filter(user=request.user)
     template = 'Profile.html'
     context = {
         'user': user,

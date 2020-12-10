@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def workouts_page(request):
-    user = Profile.objects.all()
-    workout = workouts.objects.all()
+    user = Profile.objects.filter(user=request.user)
+    workout = workouts.objects.filter(user=request.user)
 
     if request.method == 'POST':
         form = WorkoutForm(request.POST)

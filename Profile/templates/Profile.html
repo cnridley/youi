@@ -10,8 +10,8 @@
 {% endfor %}
 {% endif %}
 
-{% for users in user %}
-<h1 class='text-center profile'> Welcome to You&i, {{ users.user }}! </h1>
+{% for person in user %}
+<h1 class='text-center profile'> Welcome to You&i, {{ person.user }}! </h1>
 <h4 class="text-center profile-text"> Congratulations on making the decision to make a positive change to your life!<br>
 I can't wait to be with you on this journey and help you achieve your goals! </h3>
 <p class="text-center profile-text"> This is your persoanlized page! <br> 
@@ -40,5 +40,6 @@ You will find all your workouts here, and you will able to upload your progressi
 </div>  
 
 {% endfor %}
+
 
 {% endblock %}

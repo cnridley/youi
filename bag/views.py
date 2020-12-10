@@ -8,7 +8,7 @@ from Profile.models import Profile
 
 def shopping_bag(request):
     """A view to show the shopping bag"""
-    user = Profile.objects.all()
+    user = Profile.objects.filter(user=request.user)
     context = {
         'user': user
     }

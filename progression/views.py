@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def progression_pictures(request):
-    user = Profile.objects.all()
-    progression = ProgressionPicture.objects.all()
+    user = Profile.objects.filter(user=request.user)
+    progression = ProgressionPicture.objects.filter(user=request.user)
     
     if request.method == 'POST':
         form = ProgressionForm(request.POST, request.FILES)

@@ -4,6 +4,22 @@
 
 {% block content %}
 
-I AM THE NEW CLIENT PAGE
+{% if request.user.is_authenticated %}
+{% for users in user %}
+            <div class="loggedInText container">Logged in as {{ users.user }}</div>
+
+            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
+{% endfor %}
+{% endif %}
+
+{% if request.user.is_superuser %}
+    <div class="row container-fluid m-auto">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+    </div>
+    {% endif %}
 
 {% endblock %}

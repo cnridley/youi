@@ -111,7 +111,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #temeporary ema
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email' #tells allauth what we want to allow
 ACCOUNT_EMAIL_REQUIRED = True #makes it so an email is required to sign up
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #so that we know users are using real emails
+ACCOUNT_EMAIL_VERIFICATION = 'none' #so that we know users are using real emails
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #twice to avoid typos etc.
 ACCOUNT_USERNAME_MIN_LENGTH = 2 
 LOGIN_URL = '/accounts/login/'

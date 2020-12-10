@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from Profile.models import Profile
 
 # Create your models here.
 
 class workouts(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     weeks = models.CharField(max_length=250, null=True, blank=True)
     body_part = models.CharField(max_length=250, null=True, blank=True)
     exercise1 = models.CharField(max_length=250, null=True, blank=True)
