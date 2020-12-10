@@ -61,7 +61,12 @@
             <p class="card-text">Sets: {{ W.sets10 }}</p>
             <p class="card-text">Reps: {{ W.reps10 }}</p>
             <hr>
-
+            {% if request.user.is_authenticated %}
+                <small class="ml-3">
+                <a href="{% url 'edit_workout' W.id %}">Edit</a> |
+                <a class="text-danger" href="{% url 'delete_workout' W.id %}">Delete</a>
+            </small>
+            {% endif %}
             
 
         </div>

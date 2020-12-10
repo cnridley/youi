@@ -29,7 +29,7 @@
     <p class="card-text text-center">Waist Measurement: {{ P.waist_measurement }}</p>
     {% if request.user.is_authenticated %}
                 <small class="ml-3">
-                <a href="{% url 'edit_picture' P.id %}">Edit</a>
+                <a href="{% url 'edit_picture' P.id %}">Edit</a> |
                 <a class="text-danger" href="{% url 'delete_picture' P.id %}">Delete</a>
             </small>
     {% endif %}
