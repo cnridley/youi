@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{%  load static %}
+{% load static %}
 
 {% block content %}
 {% if request.user.is_authenticated %}
@@ -74,5 +74,44 @@
 {% endfor %}
 </div>  
 
+<!-- Button trigger modal -->
+<div class="row container-fluid">
+<button type="button" class="btn btn-primary modalButton" data-toggle="modal" data-target="#exampleModal">
+  Upload New Product
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Upload New Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if request.user.is_superuser %}
+    <div class="row container-fluid m-auto">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="contactbutton">Add New Product</button>
+    </form>
+    </div>
+    {% endif %}
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javacript">
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
 
 {% endblock %}
