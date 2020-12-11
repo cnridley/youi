@@ -53,22 +53,22 @@
 
 /*----------footer----------*/
 .footer {
-    color:white;
+    color: white;
     text-align: center;
     width: 100%;
     font-style: italic;
     font-family: "coda", cursive;
 }
 
-.footer a i {
+.socialLink {
     text-decoration: none;
     font-size: 30px;
     padding: 10px;
     color: white;
 }
 
-.footer a i:hover {
-    color: whitesmoke;
+.socialLink:hover{
+    color: lightgray;
 }
 
 /* ---- INDEX.HTML ---*/
@@ -90,6 +90,7 @@
     height: 300px;
     width: 200px;
     margin: auto;
+    padding-top: 25px;
 }
 
 /* ---- PRODUCTS.HTML ---*/

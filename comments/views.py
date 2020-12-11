@@ -8,7 +8,7 @@ from Profile.views import profile
 
 def comments(request):
     user = Profile.objects.filter(user=request.user)
-    user_comment = comment.objects.all()
+    user_comment = comment.objects.filter(user=request.user)
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
