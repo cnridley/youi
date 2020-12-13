@@ -96,7 +96,7 @@
 /* ---- PRODUCTS.HTML ---*/
 .headerAll {
     font-family: coda;
-    font-size: 60px;
+    font-size: 3em;
     color: black;
     text-transform: uppercase;
 }
@@ -179,7 +179,7 @@
     font-family: coda;
     font-style: italic;
     color: black;
-    font-size: 50px;
+    font-size: 3em;
 }
 
 .profile-text {
