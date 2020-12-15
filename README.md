@@ -89,6 +89,7 @@ to their shopping bag.
 * Google fonts for the font used on my page, I used 'coda' to try and match the logo https://fonts.google.com/
 * Django this is the framework I used to make my website https://www.djangoproject.com/
 * Django Allauth An django app that is used to make the log in process easier on my site. https://django-allauth.readthedocs.io/en/latest/
+* Stripe to take payments on the e-commerce store.
 
 ### Testing
 * Used the inspect tool on google to make sure my website looks good on all viewport sizes. 
