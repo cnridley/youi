@@ -32,7 +32,7 @@ When designing this website, I wanted to keep the color scheme that matched her 
 easy to navigate for new users and visually appealing to make potential new clients stay on the webpage and naviagte around
 the webpage. 
 
-### User stories
+# User stories
 
 As a superuser I want to achieve ....<br>
 (list items marked with 👍 are complete. List items marked with 👎 still need to be implemented)<br>
@@ -62,7 +62,7 @@ As a non-authenticated user I want to achieve ....<br>
 👍 A gallery with up-to-date photos of the studio <br>
 👍 Information on Danielle and what services she provides. <br>
 
-### Features
+# Features
 * A nav bar with an integrated 'if' statement so that different list items appear depending whether the user is 
 an authenticated user, superuser or either.
 * Links with target=_blank to social accounts.
@@ -76,12 +76,13 @@ visible to the superuser.
 to their shopping bag. 
 * The built-in UserCreationForm from django has been used to allow the superuser to create a new client. 
 
-### Other features left to implement
+# Other features left to implement
 * Online booking system so that users can book online. 
 * A free you&i t-shirt with the purchase of workout plans. 
 * Downloadble PDFs available that potential clients are able to download. 
 * A blog page, giving Danielle to upload useful articles etc.
 
+<<<<<<< HEAD
 ### Technologies used
 * Jquery so that I could 'write less, do more' and manipulate the DOM easily. https://jquery.com/
 * Bootstrap to help making my website mobile responsive, I also used the toats, carousel and modal off bootstrap. https://getbootstrap.com/docs/4.0/getting-started/introduction/
@@ -102,3 +103,16 @@ to their shopping bag.
 * Used a python code checker to check all the code and made changes accoringly. https://extendsclass.com/python-tester.html
 * Tested the links to social accounts and made sure they went to the correct social media platform and opened a 
 new webpage. 
+=======
+# Technologies used 
+* **Jquery** so that I could 'write less, do more' and manipulate the DOM easily. https://jquery.com/
+* **Bootstrap** to help making my website mobile responsive, I also used the toats, carousel and modal 
+off bootstrap. https://getbootstrap.com/docs/4.0/getting-started/introduction/
+* **Font awesome** helped make my site more visually appealing by using their icons https://fontawesome.com/
+* **Google fonts** for the font used on my page, I used 'coda' to try and match the logo https://fonts.google.com/
+* **Django** this is the framework I used to make my website https://www.djangoproject.com/
+* **Django Allauth** An django app that is used to make the log in process easier on my site. https://django-allauth.readthedocs.io/en/latest/
+
+
+
+>>>>>>> fa1c576a5426a95402f652ab916a04b58869bbf8
