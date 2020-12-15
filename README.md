@@ -62,3 +62,23 @@ As a non-authenticated user I want to achieve ....<br>
 👍 A gallery with up-to-date photos of the studio <br>
 👍 Information on Danielle and what services she provides. <br>
 
+### Features
+* A nav bar with an integrated 'if' statement so that different list items appear depending whether the user is 
+an authenticated user, superuser or either.
+* Links with target=_blank to social accounts.
+* Login page using django Allauth.
+* Contact form using django in-built form model.
+* Review form so that individuals can leave feedback.
+* A photo gallery with a carousel from bootstrap to show the photos and a 'upload new photos' button which is only 
+visible to the superuser.
+* merchandise store with the ability for users to select sizes, quantity and add to bag.
+* Toasts from bootstrap are used to display messages to the user when they have logged in, logged out and added a new item
+to their shopping bag. 
+* The built-in UserCreationForm from django has been used to allow the superuser to create a new client. 
+
+### Other features left to implement
+* Online booking system so that users can book online. 
+* A free you&i t-shirt with the purchase of workout plans. 
+* Downloadble PDFs available that potential clients are able to download. 
+* A blog page, giving Danielle to upload useful articles etc.
+
