@@ -82,3 +82,23 @@ to their shopping bag.
 * Downloadble PDFs available that potential clients are able to download. 
 * A blog page, giving Danielle to upload useful articles etc.
 
+### Technologies used
+* Jquery so that I could 'write less, do more' and manipulate the DOM easily. https://jquery.com/
+* Bootstrap to help making my website mobile responsive, I also used the toats, carousel and modal off bootstrap. https://getbootstrap.com/docs/4.0/getting-started/introduction/
+* Font awesome helped make my site more visually appealing by using their icons https://fontawesome.com/
+* Google fonts for the font used on my page, I used 'coda' to try and match the logo https://fonts.google.com/
+* Django this is the framework I used to make my website https://www.djangoproject.com/
+* Django Allauth An django app that is used to make the log in process easier on my site. https://django-allauth.readthedocs.io/en/latest/
+
+### Testing
+* Used the inspect tool on google to make sure my website looks good on all viewport sizes. 
+* Tested the links to the navbar go to the correct pages.
+* Used the strip test card numbers to make sure that the payment system was correctly working. 
+* Set the contact form to send email to the terminal to test that email were sending correctly. 
+* Tested the various 'add new ...' buttons on all of the relevant pages to make sure the forms are working. 
+* Tested the 'edit' buttons to ensure it was editing the correct product and making the correct changes. 
+* Tested the 'delete' buttons to make sure that it was getting deleted from the web page and the admin. 
+* Tested allauth functionality to make sure it was linked up correctly and logging the user in correctly. 
+* Used a python code checker to check all the code and made changes accoringly. https://extendsclass.com/python-tester.html
+* Tested the links to social accounts and made sure they went to the correct social media platform and opened a 
+new webpage. 
