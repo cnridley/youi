@@ -104,35 +104,3 @@ to their shopping bag.
 * Tested the links to social accounts and made sure they went to the correct social media platform and opened a 
 new webpage. 
 
-
-
-
-
-<div class="row container-fluid">
-{% for R in review %}
-<div class="col-sm col-md-6 col-lg-4">
-<div class="card container-fluid reviewCard">
-  <div class="card-body">
-    <h2 class="card-text">{{ R.title }}</h2>
-    <h5 class="card-text"> {{ R.name }}</h5>
-    <p> Rating: {{ R.rating }}/5</p>
-    <p> {{ R.text }}</p>
-    <p> {{ R.created_on }}</p>
-    {% if request.user.is_superuser %}
-                <small class="ml-3">
-                <!--When using id in for loop, you need to use whatever you used in the loop i.e R.
-                you can only reference the object within the scope where it's being used. 
-                In this case, the for loop -->
-                        <a class="text-danger" href="{% url 'delete_review' R.id %}">Delete</a>
-                </small>
-    {% endif %}
-  </div>
-  </div>
-
-</div>
-
-{% endfor %}
-
-
-
-</div>

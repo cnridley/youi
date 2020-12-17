@@ -21,18 +21,15 @@ Please leave a review.</p>
   <div class="carousel-inner">
             {% for R in review %}
                 {% if forloop.first %}
-                    <div class="carousel-item active  ">
+                    <div class="carousel-item active ReviewCarousel">
                 {% else %}
-                    <div class="carousel-item ">
+                    <div class="carousel-item ReviewCarousel">
                 {% endif %}
-                <img class="CarouselImage" src="..." alt="is my carousel working">
-                <div class="carousel-caption">
-                    <h5>{{ R.title }}</h5>
-                    <p>{{ R.name }}</p>
-                    <p> Rating: {{ R.rating }}/5</p>
+                    <h2>{{ R.title }}</h2>
+                    <h3> Rating: {{ R.rating }}/5</h3>
                     <p> {{ R.text }}</p>
+                    <p><strong>- {{ R.name }}</strong></p>
                     <p> {{ R.created_on }}</p>
-                    </div>
                 </div>
             {% endfor %}
         </div>

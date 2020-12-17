@@ -4,18 +4,6 @@
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
-{% for users in user %}
-
-            <div class="loggedInText container">Logged in as {{ users.user }}</div>
-
-            <a href="{% url 'account_logout' %}"><div class="loggedInText container">Logout</div></a>
-
-            
-
-{% endfor %}
-{% endif %}
-
 {% for users in user %}
 <h1 class='text-center profile'> {{ users.user }}'s Comments Page </h1>
 <p class="text-center profile-text"> I hope you are enjoying your journey so far! <br> 
