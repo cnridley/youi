@@ -42,6 +42,7 @@
     
 
 <!-- Button trigger modal -->
+{% if request.user.is_superuser %}
 <div class="row container-fluid">
 <button type="button" class="btn btn-primary modalButton" data-toggle="modal" data-target="#exampleModal">
   Upload New Picture
@@ -58,7 +59,7 @@
         </button>
       </div>
       <div class="modal-body">
-        {% if request.user.is_superuser %}
+        
     <div class="row container-fluid m-auto">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -66,9 +67,9 @@
         <button type="submit">Upload</button>
     </form>
     </div>
-    {% endif %}
+    
       </div>
-      
+      {% endif %}
     </div>
   </div>
 </div>
