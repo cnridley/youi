@@ -104,3 +104,26 @@ to their shopping bag.
 * Tested the links to social accounts and made sure they went to the correct social media platform and opened a 
 new webpage. 
 
+# Deployment
+To deploy this website, I used multiple different programmes. In this section I will go through each programme and outline how 
+I used them to deploy the site. 
+
+## Github
+GitHub contains my repository and is where my site was deployed until it was 95% complete. 
+As I am using GitPod, I was able to use the green gitpod button on my repo so that is was automatically connected to the 
+correct repo. 
+Every time I updated the site I would then run the following in the command line:<br>
+git add .<br>
+git commit -m "repository message"<br>
+git push <br>
+
+## Heroku 
+To deploy to Heroku I did the following:<br>
+* Created a new app in my heroku dashboard. 
+* In the resources tab I add the 'Heroku Postrgres' add-on. 
+* In the CLI in gitpod I installed gunicorn and dj_database_url, these two packages are required to push to Heroku successfully.
+* Import dj_database_url in settings.py (at the top)
+
+
+## AWS (S3 and IAM)
+
