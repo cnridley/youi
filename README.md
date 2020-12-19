@@ -82,7 +82,7 @@ to their shopping bag.
 * Downloadble PDFs available that potential clients are able to download. 
 * A blog page, giving Danielle to upload useful articles etc.
 
-### Technologies used
+# Technologies used
 * Jquery so that I could 'write less, do more' and manipulate the DOM easily. https://jquery.com/
 * Bootstrap to help making my website mobile responsive, I also used the toats, carousel and modal off bootstrap. https://getbootstrap.com/docs/4.0/getting-started/introduction/
 * Font awesome helped make my site more visually appealing by using their icons https://fontawesome.com/
@@ -91,7 +91,7 @@ to their shopping bag.
 * Django Allauth An django app that is used to make the log in process easier on my site. https://django-allauth.readthedocs.io/en/latest/
 * Stripe to take payments on the e-commerce store.
 
-### Testing
+# Testing
 * Used the inspect tool on google to make sure my website looks good on all viewport sizes. 
 * Tested the links to the navbar go to the correct pages.
 * Used the strip test card numbers to make sure that the payment system was correctly working. 
@@ -231,6 +231,13 @@ STRIPE_WH_SECRET, which were all on my stripe dashboard under the developers/API
 * I then set up a new webhook handler as the current one is set to github.
 To do this I selected create new webhook and had the endpoint URL as the deployed heroku url with /checkout/wh added to the end
 and selecting receive all events. 
+
+# Credits
+The content and media for the project was provided by Danielle who kindly allowed my to use her Personal 
+Training business as a template for my project. 
+### Acknowledgements 
+Many thanks goes out to Danielle and all of the Code Institute Tutors that helped massively to get this
+project to where it it!! 
 
 
 
