@@ -121,9 +121,116 @@ git push <br>
 To deploy to Heroku I did the following:<br>
 * Created a new app in my heroku dashboard. 
 * In the resources tab I add the 'Heroku Postrgres' add-on. 
-* In the CLI in gitpod I installed gunicorn and dj_database_url, these two packages are required to push to Heroku successfully.
+* In the CLI in gitpod I installed gunicorn, dj_database_url and , psycopg2-binary these packages are required to push to Heroku successfully.
 * Import dj_database_url in settings.py (at the top)
+* Within the settings.py file at the database section, comment out the default configuration and replace the default 
+to 'default': dj_database_url.parse(os.environ.get('DATABASE_URL')), the DATABASE_URL is from the config vars in the
+settings tab of the new heroku app.
+* Becuse we are not connected to Postgres I then had to run all the migrations again, using the command,
+python3 manage.py migrate - which applied all the migrations to get the database up and running.
+* Load the products data by running 'python3 manage.py loaddata products'.
+* I then created a new superuser, as we are now using a new database.
+* I then uncommented the database settings are wrapped an if statement to outline if the app is running on Heroku we use
+Postgres, otherwise we connect to SequelLite. 
+* Created a Procfile to tell Heroku to create a web dyno which will run gunicorn and serve the django app.
+* In the CLI login to Heroku using the command 'heroku login -i'
+* To make sure Heroku does not collect static files when I deployed (because I am using s3 for that), in the 
+CLI I ran 'heroku congig:set DISABLE_COLLECTSTATIC=1 --app you-and-i-cr'
+* Added the heroku app name ('you-and-i-cr.herokuapp.com') in the 'allowed hosts' within settings.py, as well as loacalhost.
+* Deployed my app by running the following commands:<br>
+git add .<br>
+git commit -m 'repo message'<br>
+git push<br>
+heroku git -a you-and-i-cr<br>
+git push heroku master<br>
+* Once the app is deployed correctly, I set up automatic deployment so that any time I pushed to GitHub it 
+would also deploy to heroku.
+* Created a SECRET_KEY config variable in heroku using the django secret key generator on google, I updated the secret key 
+settings in settings.py to os.environ.get('SECRET_KEY', ''), so that the secret keys stays secret.
+* Changed DEBUG variable to DEBUG = 'DEVELOPMENT' in os.environ
 
 
 ## AWS (S3 and IAM)
+
+* AWS is a much larger much more feature-ful Heroku - it offer cloud based services, the two I used for this project 
+are S3 (simple storage service), that is where I stored my static and media files, the other service I used 
+is IAM (Identity and access management) which creates a user to access the bucket. 
+
+### S3:
+* Created a new bucket (you-and-i-cr), unchecked block all public access as they need to be public in 
+order to allow public access to our static files. 
+* In properties tab with in the new bucket, enable static website hosting, using the default values for the error and index
+document as it is not needed for my project.
+* Within the permissions tab the following three changes were made: <br>
+These settings were added to the CORS values.<br>
+[<br>
+  {<br>
+      "AllowedHeaders": [<br>
+          "Authorization"<br>
+      ],<br>
+      "AllowedMethods": [<br>
+          "GET"<br>
+      ],<br>
+      "AllowedOrigins": [<br>
+          "*"<br>
+      ],<br>
+      "ExposeHeaders": []<br>
+  }<br>
+]<br><br>
+
+Within the bucket policy, I generated a bucket policy, with a policy type of 's3 bucket policy', allowed all
+principles by using an asterix, and actions would be 'get objects', and copy and pasted the ARN into the required 
+field.<br>
+I then copy and pasted the generated bucket policy into the bucket policy editor, adding a /* at the end of the
+resource key as we want to allow access to all resources in this bucket.<br><br>
+
+Under the ACL (access control list), I changed the list object permission to everyone.<br><br>
+
+After altering those settings the S3 bucket is ready to go!!
+
+### IAM 
+* In the groups tab, I created a new group (yuo-and-i-cr), skipping the attached policy as I did not 
+have one yet. 
+* Under the policies tab, I created a policy for the new group. Under the JSON tab (after create new policy has been clicked)
+I selected import managed policy which let me import one (s3 full access policy) that AWS has pre-built for full access to s3.
+* However, I did not want access to all of s3, therefore I retrievd the ARN from the bucket policy page on S3 and 
+copy and pasted it into the resources key on the bucket policy. <br>
+"arn:aws:s3:::you-and-i-cr",
+"arn:aws:s3:::you-and-i-cr/*"<br>
+I had to copy it twice, the first line is the bucket itself and the /* adds another rule for all files and folders in 
+the bucket.
+* I then reviewed the policy, gave it a name and decription and finally created the policy. 
+* I then attached the newly made policy to my group that I made. To do this I clicked on the group, 
+clicked attach policy, searched the name of the new policy, and click attach policy. 
+* Lastly, I created a user to put into the group. On the users tab I clicked add user, gave it a name of
+'you-and-i-staticfile-user, gave the programatic access, by clicking next I was able to add the user to the group, 
+making sure I downloaded the CSV file at the end as it contains the user access key and secret access key which are needed
+later on. 
+
+## Connecting S3 to Django
+Once I had finished setting up my S3 bucket and creating the appropriate policy, group and user, I had to connect it 
+to Django and store my static files in it. To do this I:
+* Installed two new packages in the CLI (pip3 install boto3 and pip3 install django-storages).
+* Add 'storages' to my installed apps in settings.py
+* Added the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to config variables (these are from the CSV file I downloaded
+and are very important to be kept secret!!).
+* I also removed the DISABLE_COLLECTSTATIC variable so that static files can now be accessed by s3.
+* Added variable 'USE_AWS' and set it to True.
+* I then added the AWS settings that can be found in settings.py 
+* Created a new file called 'custom_storages.py', to tell django that in production
+we want to use s3 to store our static files whenever someone runs collectstatic.
+And that we want any uploaded product images to go there also.
+* When I then run a git push command, Heroku has collected static files and s3 had a new folder called 'static'
+with in the bucket I created. 
+* To manage the media files, I did that from the s3 bucket by creating a new folder called 'media', and adding 
+all the neccesary pictures for my project, making sure I had granted public read access to this folder. 
+
+### Connecting stripe to heroku
+* Within the Heroku app in the config variables, I added the STRIPE_PUBLIC KEY STRIPE_SECRET_KEY and 
+STRIPE_WH_SECRET, which were all on my stripe dashboard under the developers/API keys tab.
+* I then set up a new webhook handler as the current one is set to github.
+To do this I selected create new webhook and had the endpoint URL as the deployed heroku url with /checkout/wh added to the end
+and selecting receive all events. 
+
+
 
