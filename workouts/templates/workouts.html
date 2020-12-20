@@ -12,64 +12,76 @@
 <div class="row">
 {% for W in workout %}
 
-<div class="col-sm col-md-6 col-lg-4">
-    <div class="card ProductsCard" style="width: 18rem;">
-        <div class="card-body">
-            <h2 class="card-text">Week: {{ W.weeks }}</h2>
-            <hr>
-            <h4 class="card-text">Workout: {{ W.body_part }}</h4>
-            <hr>
-            <h5 class="card-text">Gym or Home: {{ W.gym_or_home }}</h5>
-            <hr>
-            <p class="card-text">Exercise: {{ W.exercise1 }}</p>
+    <div class="col-sm col-md-6 col-lg-4">
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Week: {{ W.weeks }}<br>
+  Workout: {{ W.body_part }}<br>
+  Gym or Home: {{ W.gym_or_home }}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="card-text">Exercise: {{ W.exercise1 }}</p>
             <p class="card-text">Sets: {{ W.sets1 }}</p>
             <p class="card-text">Reps: {{ W.reps1 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise2 }}</p>
             <p class="card-text">Sets: {{ W.sets2 }}</p>
             <p class="card-text">Reps: {{ W.reps2 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise3 }}</p>
             <p class="card-text">Sets: {{ W.sets3 }}</p>
             <p class="card-text">Reps: {{ W.reps3 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise4 }}</p>
             <p class="card-text">Sets: {{ W.sets4 }}</p>
             <p class="card-text">Reps: {{ W.reps4 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise5 }}</p>
             <p class="card-text">Sets: {{ W.sets5 }}</p>
             <p class="card-text">Reps: {{ W.reps5 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise6 }}</p>
             <p class="card-text">Sets: {{ W.sets6 }}</p>
             <p class="card-text">Reps: {{ W.reps6 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise7 }}</p>
             <p class="card-text">Sets: {{ W.sets7 }}</p>
             <p class="card-text">Reps: {{ W.reps7 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise8 }}</p>
             <p class="card-text">Sets: {{ W.sets8 }}</p>
             <p class="card-text">Reps: {{ W.reps8 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise9 }}</p>
             <p class="card-text">Sets: {{ W.sets9 }}</p>
             <p class="card-text">Reps: {{ W.reps9 }}</p>
-            <hr>
+            
             <p class="card-text">Exercise: {{ W.exercise10 }}</p>
             <p class="card-text">Sets: {{ W.sets10 }}</p>
             <p class="card-text">Reps: {{ W.reps10 }}</p>
-            <hr>
-            {% if request.user.is_authenticated %}
+        <div class="modal-footer">
+        {% if request.user.is_authenticated %}
                 <small class="ml-3">
                 <a href="{% url 'edit_workout' W.id %}">Edit</a> |
                 <a class="text-danger" href="{% url 'delete_workout' W.id %}">Delete</a>
             </small>
-            {% endif %}
-            
-
-        </div>
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 </div>
 

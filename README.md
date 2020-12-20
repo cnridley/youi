@@ -241,3 +241,63 @@ project to where it it!!
 
 
 
+<div class="card ProductsCard" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-text">Week: {{ W.weeks }}</h2>
+            <hr>
+            <h4 class="card-text">Workout: {{ W.body_part }}</h4>
+            <hr>
+            <h5 class="card-text">Gym or Home: {{ W.gym_or_home }}</h5>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise1 }}</p>
+            <p class="card-text">Sets: {{ W.sets1 }}</p>
+            <p class="card-text">Reps: {{ W.reps1 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise2 }}</p>
+            <p class="card-text">Sets: {{ W.sets2 }}</p>
+            <p class="card-text">Reps: {{ W.reps2 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise3 }}</p>
+            <p class="card-text">Sets: {{ W.sets3 }}</p>
+            <p class="card-text">Reps: {{ W.reps3 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise4 }}</p>
+            <p class="card-text">Sets: {{ W.sets4 }}</p>
+            <p class="card-text">Reps: {{ W.reps4 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise5 }}</p>
+            <p class="card-text">Sets: {{ W.sets5 }}</p>
+            <p class="card-text">Reps: {{ W.reps5 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise6 }}</p>
+            <p class="card-text">Sets: {{ W.sets6 }}</p>
+            <p class="card-text">Reps: {{ W.reps6 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise7 }}</p>
+            <p class="card-text">Sets: {{ W.sets7 }}</p>
+            <p class="card-text">Reps: {{ W.reps7 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise8 }}</p>
+            <p class="card-text">Sets: {{ W.sets8 }}</p>
+            <p class="card-text">Reps: {{ W.reps8 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise9 }}</p>
+            <p class="card-text">Sets: {{ W.sets9 }}</p>
+            <p class="card-text">Reps: {{ W.reps9 }}</p>
+            <hr>
+            <p class="card-text">Exercise: {{ W.exercise10 }}</p>
+            <p class="card-text">Sets: {{ W.sets10 }}</p>
+            <p class="card-text">Reps: {{ W.reps10 }}</p>
+            <hr>
+            {% if request.user.is_authenticated %}
+                <small class="ml-3">
+                <a href="{% url 'edit_workout' W.id %}">Edit</a> |
+                <a class="text-danger" href="{% url 'delete_workout' W.id %}">Delete</a>
+            </small>
+            {% endif %}
+            
+
+        </div>
+
+
+
