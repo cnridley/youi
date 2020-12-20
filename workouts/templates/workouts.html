@@ -12,7 +12,7 @@
 <div class="row">
 {% for W in workout %}
 
-    <div class="col-sm col-md-6 col-lg-4">
+<div class="col-sm col-md-6 col-lg-4">
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Week: {{ W.weeks }}<br>
@@ -34,39 +34,39 @@
         <p class="card-text">Exercise: {{ W.exercise1 }}</p>
             <p class="card-text">Sets: {{ W.sets1 }}</p>
             <p class="card-text">Reps: {{ W.reps1 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise2 }}</p>
             <p class="card-text">Sets: {{ W.sets2 }}</p>
             <p class="card-text">Reps: {{ W.reps2 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise3 }}</p>
             <p class="card-text">Sets: {{ W.sets3 }}</p>
             <p class="card-text">Reps: {{ W.reps3 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise4 }}</p>
             <p class="card-text">Sets: {{ W.sets4 }}</p>
             <p class="card-text">Reps: {{ W.reps4 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise5 }}</p>
             <p class="card-text">Sets: {{ W.sets5 }}</p>
             <p class="card-text">Reps: {{ W.reps5 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise6 }}</p>
             <p class="card-text">Sets: {{ W.sets6 }}</p>
             <p class="card-text">Reps: {{ W.reps6 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise7 }}</p>
             <p class="card-text">Sets: {{ W.sets7 }}</p>
             <p class="card-text">Reps: {{ W.reps7 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise8 }}</p>
             <p class="card-text">Sets: {{ W.sets8 }}</p>
             <p class="card-text">Reps: {{ W.reps8 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise9 }}</p>
             <p class="card-text">Sets: {{ W.sets9 }}</p>
             <p class="card-text">Reps: {{ W.reps9 }}</p>
-            
+            <hr>
             <p class="card-text">Exercise: {{ W.exercise10 }}</p>
             <p class="card-text">Sets: {{ W.sets10 }}</p>
             <p class="card-text">Reps: {{ W.reps10 }}</p>
@@ -92,7 +92,7 @@
 <!-- Button trigger modal for danielle to upload new workout-->
 {% if request.user.is_superuser %}
 <div class="row container-fluid">
-<button type="button" class="btn btn-primary modalButton" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary modalButton" data-toggle="modal" data-target="#WorkoutFormModal">
 {% for users in user %}
   Upload New Workout for {{ users.user }}
 {% endfor %}
@@ -101,11 +101,11 @@
 {% endif %}
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="WorkoutFormModal" tabindex="-1" role="dialog" aria-labelledby="WorkoutFormModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Workout</h5>
+        <h5 class="modal-title" id="WorkoutFormModalLabel">New Workout</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
