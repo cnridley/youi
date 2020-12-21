@@ -294,6 +294,19 @@
     margin-bottom: 20px;
     padding: 8px;
 }
+/* --  WORKOUTS.HTML -- */
+
+.WorkoutsBtn {
+    background-color: pink;
+    font-family: coda;
+    font-size: 17px;
+    font-style: italic;
+    color: whitesmoke;
+    border: lightgray 3px solid;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px;
+}
 
 
 
