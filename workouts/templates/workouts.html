@@ -9,19 +9,14 @@
 <!-- ORIGINAL LAYOUT!! -->
 <div class="homeButton"><a href="{% url 'profile' %}"> <i class="fas fa-home"></i></a></div>
 
-<div class="row">
-{% for W in workout %}
 
-<div class="col-sm col-md-6 col-lg-4">
-        <!-- Button trigger modal -->
+{% for W in workout %}
+<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Week: {{ W.weeks }}<br>
   Workout: {{ W.body_part }}<br>
   Gym or Home: {{ W.gym_or_home }}
 </button>
-    </div>
-</div>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
