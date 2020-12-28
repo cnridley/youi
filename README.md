@@ -81,6 +81,7 @@ to their shopping bag.
 * A free you&i t-shirt with the purchase of workout plans. 
 * Downloadble PDFs available that potential clients are able to download. 
 * A blog page, giving Danielle to upload useful articles etc.
+* A 'are you sure?' delete modal that pops up. 
 
 # Technologies used
 * Jquery so that I could 'write less, do more' and manipulate the DOM easily. https://jquery.com/
