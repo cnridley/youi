@@ -58,6 +58,9 @@
     width: 100%;
     font-style: italic;
     font-family: "coda", cursive;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 .socialLink {
